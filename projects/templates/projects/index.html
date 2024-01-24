@@ -1,0 +1,22 @@
+{% extends 'projects/base.html' %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+{% load static %}
+    <h1>Listes de projet</h1>
+    <ul>
+        <li class="big">Groceries
+            <ul>
+                <li class="done">3 Tomatoes</li>
+                <li>1 bunch of cherries</li>
+                <li>6 onions</li>
+                <li class="done">3 heads of garlic</li>
+                <li>1 bag spring mix</li>
+            </ul>
+        </li>
+        <li class="done">Cancel gym membership</li>
+        <li>Clean gutters</li>
+        <li class="done">Take package to the post office</li>
+        <li class="done">Call Avery about Ali's party (afternoon)</li>
+        <li>Sort recycling & put out trash</li>
+    </ul>
+{% endblock %}

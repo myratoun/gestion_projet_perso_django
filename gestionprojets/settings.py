@@ -36,8 +36,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "projects",
-    "projects.templates"
+    'hamlpy',
+    "django-sass",
+    "projects"
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,11 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Authentication
-LOGIN_REDIRECT_URL = 'projects:home'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+
+# SASS
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(BASE_DIR, 'static', 'scss'),
+]

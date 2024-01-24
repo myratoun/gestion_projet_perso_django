@@ -1,0 +1,18 @@
+.bg-home {
+    background: #262a2b;
+}
+
+.btn-login {
+    background-color: #423939;
+    color: #FFFFFF;
+}
+
+.btn-login:hover {
+    color: #DDDDDD;
+}
+
+.btn-logout {
+    background: none;
+    border: none;
+}
+

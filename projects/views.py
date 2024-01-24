@@ -1,20 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.shortcuts import render
 from django.contrib.auth.views import LogoutView
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
+@login_required()
 def home(request):
-    return HttpResponse(f"<h1>Hello World !</h1>")
+    return render(request, 'projects/index.html')
 
 
 def login(request):
     return render(request, 'projects/login.html')
-
-
-class CustomLogoutView(LogoutView):
-    template_name = 'projects/logout.html'
-    next_page = 'projects:login-page'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
