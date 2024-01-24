@@ -16,3 +16,22 @@ function togglePassword() {
 [...document.querySelectorAll('li')].forEach(li =>
   li.addEventListener('click', e => (e.stopPropagation(), li.classList.toggle('done')))
 );
+
+$(document).ready(function () {
+    $('#addProjectForm').submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: 'POST',
+            url: '/',
+            data: $(this).serialize(),
+            success: function (data) {
+                if (data.status === 'success') {
+                    $('#addProjectModal').modal('hide');
+                } else if (data.status === 'error') {
+                    console.log(data.errors);
+                }
+            }
+        });
+    });
+});

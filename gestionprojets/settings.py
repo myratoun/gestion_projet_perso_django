@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'hamlpy',
-    "django-sass",
+    'compressor',
     "projects"
 ]
 
@@ -128,7 +128,14 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 
 # SASS
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
-SASS_PROCESSOR_INCLUDE_DIRS = [
-    os.path.join(BASE_DIR, 'static', 'scss'),
-]
+SASS_PROCESSOR_ENABLED = True
+SASS_PROCESSOR_ROOT = [BASE_DIR / 'static']
+SASS_PROCESSOR_INCLUDE_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# COMPRESSOR
+COMPRESS_ROOT = BASE_DIR / "static_root"
+COMPRESS_ENABLED = True
+COMPRESS_PARSER = 'compressor.parser.HtmlParser'
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
