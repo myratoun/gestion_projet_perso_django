@@ -18,19 +18,23 @@ function togglePassword() {
 );
 
 $(document).ready(function () {
-    $('#addProjectForm').submit(function (e) {
-        e.preventDefault();
+    $('input[type="checkbox"]').change(function () {
+        var tacheId = $(this).closest('form').data('tache-id');
+        var isChecked = $(this).prop('checked');
 
         $.ajax({
+            url: '/projects/update_tache/' + tacheId + '/',
             type: 'POST',
-            url: '/',
-            data: $(this).serialize(),
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                checked: isChecked ? 'true' : 'false'
+            },
             success: function (data) {
-                if (data.status === 'success') {
-                    $('#addProjectModal').modal('hide');
-                } else if (data.status === 'error') {
-                    console.log(data.errors);
-                }
+                console.log('Tâche mise à jour avec succès!');
+            },
+            error: function (error) {
+                // Gérez les erreurs
+                console.error('Erreur lors de la mise à jour de la tâche:', error);
             }
         });
     });

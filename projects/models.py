@@ -8,6 +8,7 @@ class Project(models.Model):
         ('SUSPENDU', 'Suspendu'),
         ('TERMINE', 'Terminé'),
         ('EN_EVAL', 'En Évaluation'),
+        ('EXPIRE', 'Expiré'),
     ]
 
     name = models.CharField(max_length=200)

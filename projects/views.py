@@ -45,3 +45,7 @@ def add_tache(request, project_id):
             submitted = True
 
     return render(request, 'projects/add_tache_form.html', {'project': project_id})
+
+
+def update_tache(request, tache_id):
+    return HttpResponseRedirect("/")
