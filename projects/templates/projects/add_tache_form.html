@@ -1,0 +1,39 @@
+{% extends 'projects/base.html' %}
+{% block title %}Ajout de tache{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="frame m-4 p-4">
+                    <div class="list w-75">
+                        <div class="head">
+                            <div class="title">Ajouter une tâche</div>
+                        </div>
+                        <form action method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="project" value="{{ project }}">
+                            <div class="form-group mt-5 p-2">
+                                <input id="number_order" type="number" name="number_order" class="form-control" required>
+                                <label class="form-control-placeholder" for="number_order">Numéro d'ordre</label>
+                            </div>
+                            <div class="form-group mt-5 p-2">
+                                <input id="description" type="text" name="description" class="form-control" required>
+                                <label class="form-control-placeholder" for="description">Description de la tâche</label>
+                            </div>
+                            <div class="form-group mt-5 p-2">
+                                <input id="date_end" type="date" name="date_end" class="form-control" required>
+                                <label class="form-control-placeholder" for="date_end">Date d'echéance</label>
+                            </div>
+                            <div class="form-group d-block float-right mt-2 mr-4 w-25">
+                                <button type="submit" class="form-control btn btn-login rounded submit px-3">Ajouter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+{% endblock %}

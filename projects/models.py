@@ -21,7 +21,7 @@ class Tache(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     number_order = models.IntegerField()
     description = models.TextField()
-    delay = models.DateField()
+    date_end = models.DateField()
     checked = models.BooleanField(default=False)
 
     def __str__(self):

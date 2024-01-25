@@ -1,8 +1,8 @@
 # Thème: Gestion de projet personnel
 
-Nom: RAKOTOMANGA Antsanirina Myra - 88/LA - IAD
+Nom: RAKOTOMANGA Antsanirina Myra - 88/LA/24 - IAD
 
-## Package utile
-CSS(SASS)
+## login
+username: `admin`
 
-`pip install django-sass`
+password: `admin`

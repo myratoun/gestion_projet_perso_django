@@ -1,0 +1,30 @@
+{% extends 'projects/base.html' %}
+{% block title %}Ajout de projet{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="frame m-4 p-4">
+                    <div class="list w-75">
+                        <div class="head">
+                            <div class="title">Ajouter un projet</div>
+                        </div>
+                        <form action method="POST">
+                            {% csrf_token %}
+                            <div class="form-group mt-5 p-2">
+                                <input id="name" type="text" name="name" class="form-control" required>
+                                <label class="form-control-placeholder" for="name">Nom du projet</label>
+                            </div>
+                            <div class="form-group d-block float-right mt-2 mr-4 w-25">
+                                <button type="submit" class="form-control btn btn-login rounded submit px-3">Ajouter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+{% endblock %}
