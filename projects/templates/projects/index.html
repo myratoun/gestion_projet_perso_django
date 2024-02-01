@@ -20,7 +20,7 @@
                         <li>
                             <form action="{% url 'projects:update-tache' tache.id %}" id="form-tache-{{ tache.id }}" data-tache-id="{{ tache.id }}">
                                 {% csrf_token %}
-                                <input type="checkbox" id="item-{{ tache.id}}" name="{{ tache.id }}" {% if tache.checked %}checked{% endif %}>
+                                <input type="checkbox" id="item-{{ tache.id}}" name="checked" {% if tache.checked %}checked{% endif %}>
                                 <label for="item-{{ tache.id}}" class="text">{{ tache.description }}</label>
                                 <label for="item-{{ tache.id}}" class="button"></label>
                                 <div class="wrapper">

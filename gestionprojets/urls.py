@@ -22,6 +22,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views
 
+app_name = "gestionprojects"
+
 urlpatterns = [
                   path("admin/", admin.site.urls),
                   path("projects/", include('projects.urls')),

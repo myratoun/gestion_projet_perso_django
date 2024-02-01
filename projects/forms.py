@@ -12,3 +12,9 @@ class TacheForm(forms.ModelForm):
     class Meta:
         model = Tache
         fields = ["project", "number_order", "description", "date_end"]
+
+
+class UpdateTacheForm(forms.ModelForm):
+    class Meta:
+        model = Tache
+        fields = ["checked"]
